@@ -1,0 +1,2 @@
+# kfg
+KFG info szakkör
