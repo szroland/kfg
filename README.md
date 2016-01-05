@@ -105,7 +105,47 @@ rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 
 ### Házi feladat: Győzelem
 - Rakjunk ki valamilyen mókás feliratot, ha minden tárgyat felszedett a játékos
+- Számoljuk össze kódból a felszedendő objektumokat:
+```csharp
+max = GameObject.FindGameObjectsWithTag("Felszed").Length;
+```
 
+### Házi feladaz: Félős céltárgy
+- Csináljunk olyan szkriptet, amit ha ráteszünk a célobjektumra, a következőt csinálja:
+  - Figyeli, hogy közel van-e a játékos
+  - Ha igen, összemegy kicsire (vagy arréb ugrik pl.)
+  - Ha nem, akkor visszaáll eredeti méretére
+  - Ehhez kell egy olyan Trigger Collider, ami nagyobb, mint amit a felszedéshez használunk
+    - Új Collidert csak egy új GameObject-re tehetünk, célszerű tehát egy "Empty" objektumba tenni a kockát, és egy másik empty-t ami figyeli a játékos közelségét
+```csharp
+using UnityEngine;
+
+public class Félős : MonoBehaviour
+{
+    public float osszehuzodas = 0.5f;
+
+    public Transform target;
+    private Vector3 eredetiMeret;
+
+    void Start()
+    {
+        eredetiMeret = target.localScale;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        target.localScale = eredetiMeret * osszehuzodas;        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+
+        target.localScale = eredetiMeret;
+    }
+
+}
+```
+  - El is tudna ugrani? Véletlenszerű irányba, esetleg a Player-től ellentétesen? Esetleg oszcillál fel, le, ha közel van a Player?   	
 
 ## Linkek
 
