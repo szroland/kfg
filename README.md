@@ -52,34 +52,34 @@ public class PlayerController : MonoBehaviour {
 - Rigidbody / Is Kinematic -ot kapcsoljuk be, később majd kódból mozgathatjuk
 - Collider / Is Trigger -t kapcsoljuk be, hogy értesüljünk az ütközésről, ne pedig lepattanjunk róla
 - Rakjunk rá egy tag-et (pl. "Felszed")
-- A PlayerControllerbeen detektáljuk az ütközést:
-  ```csharp
-    void OnTriggerEnter(Collider other) 
+- A PlayerControllerben detektáljuk az ütközést:
+```csharp
+void OnTriggerEnter(Collider other) 
+{
+    if (other.gameObject.CompareTag ("Felszed"))
     {
-        if (other.gameObject.CompareTag ("Felszed"))
-        {
-            other.gameObject.SetActive (false);
-        }
+        other.gameObject.SetActive (false);
     }
-  ```    
+}
+```    
 
 ### Pontok kijelzése
 - Rakjunk fel egy szöveg dobozt: `Game Object > UI > Text`
 - A PlayerControllerben hasznaljuk majd:
   - UI namespace
-    ```csharp
-    using UnityEngine.UI;
-    ```
+```csharp
+using UnityEngine.UI;
+```
   - Referencia a szövegdobozra, amire majd kiírunk, ill. számoljuk a felszedett tárgyakat
-    ```csharp
-    public Text pontKijelzo;
-    private int pontok;
-    ```
+```csharp
+public Text pontKijelzo;
+private int pontok;
+```
   - Ha felszedünk valamit, növeljük a számlálót, ill. frissítjük a szöveget
-    ```csharp
-    pontok++;
-    pontKijelzo.text = "Pontok: " + pontok;
-    ```
+```csharp
+pontok++;
+pontKijelzo.text = "Pontok: " + pontok;
+```
 - Ne felejtsük a referenciát beállítani a tényleges szövegdobozra
 
 ### Házi feladat: Föld
@@ -91,17 +91,21 @@ public class PlayerController : MonoBehaviour {
 
 ### Házi feladat: ugrálás
 - Legyen állítható az ugrás erősség
-  ```csharp
-  public float jumpPower = 1;
-  ```
+```csharp
+public float jumpPower = 1;
+```
 - "Ugrás" gomb le van nyomva?
-  ```csharp
-  bool jump = Input.GetButton("Jump");
-  ```
+```csharp
+bool jump = Input.GetButton("Jump");
+```
 - Ha igen, akkor adjunk egy lökést az objektumnak
-  ```csharp
-  rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-  ```
+```csharp
+rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+```
+
+### Házi feladat: Győzelem
+- Rakjunk ki valamilyen mókás feliratot, ha minden tárgyat felszedett a játékos
+
 
 ## Linkek
 
