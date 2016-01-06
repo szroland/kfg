@@ -110,7 +110,7 @@ rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 max = GameObject.FindGameObjectsWithTag("Felszed").Length;
 ```
 
-### Házi feladaz: Félős céltárgy
+### Házi feladat: Félős céltárgy
 - Csináljunk olyan szkriptet, amit ha ráteszünk a célobjektumra, a következőt csinálja:
   - Figyeli, hogy közel van-e a játékos
   - Ha igen, összemegy kicsire (vagy arréb ugrik pl.)
