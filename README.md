@@ -110,7 +110,7 @@ rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 max = GameObject.FindGameObjectsWithTag("Felszed").Length;
 ```
 
-### Házi feladat: Félős céltárgy
+### Házi feladat (haladó): Félős céltárgy
 - Csináljunk olyan szkriptet, amit ha ráteszünk a célobjektumra, a következőt csinálja:
   - Figyeli, hogy közel van-e a játékos
   - Ha igen, összemegy kicsire (vagy arréb ugrik pl.)
@@ -145,7 +145,15 @@ public class Félős : MonoBehaviour
 
 }
 ```
-  - El is tudna ugrani? Véletlenszerű irányba, esetleg a Player-től ellentétesen? Esetleg oszcillál fel, le, ha közel van a Player?   	
+  - El is tudna ugrani? Véletlenszerű irányba, esetleg a Player-től ellentétesen? Esetleg oszcillál fel, le, ha közel van a Player?   
+  - Oszcilláláshoz sin/cos függvény (Time.time az indítás óta eltelt idő):
+  
+```csharp
+using System;
+
+np.x += kiteres * (float) Math.Sin(sebesseg * Time.time);
+np.z += kiteres * (float) Math.Cos(sebesseg * Time.time);
+```
 
 ## Linkek
 
