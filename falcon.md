@@ -4,6 +4,7 @@
 
 ### Motiváció
 - Miért jobb, mint pl. repülőgép üzemmódban?
+- [Falcon 9 függőleges fel és leszállás teszt](https://www.youtube.com/watch?v=ZwwS4YOTbbw). Ők is így kezdték.
 - [Falcon 9 rakéta első fokozazának visszatérése](https://www.youtube.com/watch?v=ANv5UfZsvZQ)
 - [jan 18-ai sikertelen visszatérés egy úszó platformra](https://www.youtube.com/watch?v=Nd9ySTUVEMA)
 
